@@ -1,31 +1,34 @@
 :root {
-  --primary-color: #356aff;
-  --bg-color: #f5f5f5;
-  --light-bg-color: #fff;
-  --text-color: #111116;
-  --light-text-color: #cdccd1;
-  --primary-text-color: #fff;
+  --primary-color: #ff5f6d;
+  --secondary-color: #ffc371;
+  --accent-color: #36cfc9;
+  --bg-color: #f0f4f7;
+  --light-bg-color: #ffffff;
+  --text-color: #2d3436;
+  --light-text-color: #b2bec3;
+  --primary-text-color: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
 }
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   border-radius: 30px;
-  background: #f1f1f1;
+  background: #e0e0e0;
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 30px;
   background: var(--primary-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--bg-color);
+  background: var(--secondary-color);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 body {
   min-height: 100vh;
@@ -36,23 +39,30 @@ body {
   background-color: var(--bg-color);
 }
 body.dark {
-  --bg-color: #111116;
-  --light-bg-color: #1c1b20;
-  --text-color: #fff;
-  --light-text-color: #58575c;
+  --bg-color: #2c2c54;
+  --light-bg-color: #3b3b98;
+  --text-color: #dfe6e9;
+  --light-text-color: #636e72;
 }
 .container {
   position: relative;
-  width: 1200px;
+  width: 1000px;
   padding: 0 20px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  justify-content: space-between;
 }
 .container .card {
   flex: 1;
-  padding: 30px;
-  border-radius: 20px;
+  padding: 40px;
+  border-radius: 30px;
   background-color: var(--light-bg-color);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.container .card:hover {
+  transform: translateY(-10px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
 }
 .container .card .from,
 .container .card .to {
@@ -60,15 +70,9 @@ body.dark {
   align-items: center;
   gap: 20px;
 }
-.container .card .from {
-  margin-right: 20px;
-}
-.container .card .to {
-  margin-left: 20px;
-}
 .container .card .heading {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: bold;
   color: var(--light-text-color);
   white-space: nowrap;
 }
@@ -89,10 +93,12 @@ body.dark {
 .dropdown-container .dropdown-toggle span {
   flex: 1;
   margin-left: 10px;
+  color: var(--text-color);
 }
 .dropdown-container .dropdown-toggle ion-icon {
   font-size: 20px;
   transition: transform 0.3s ease;
+  color: var(--primary-color);
 }
 .dropdown-container.active .dropdown-toggle {
   border-radius: 20px 20px 0 0;
@@ -105,7 +111,7 @@ body.dark {
   top: 100%;
   left: 0;
   width: 100%;
-  height: 300px;
+  height: 200px;
   overflow: auto;
   display: none;
   padding: 20px;
@@ -122,20 +128,17 @@ body.dark {
 .dropdown-container.active .dropdown-menu {
   display: flex;
 }
-
 .dropdown-container .dropdown-menu li {
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
   margin-bottom: 5px;
   border-bottom: 1px solid var(--light-bg-color);
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
   transition: all 0.3s ease;
 }
 .dropdown-container .dropdown-menu li:hover {
-  background-color: var(--light-bg-color);
-}
-.dropdown-container .dropdown-menu li.active {
-  color: var(--primary-text-color);
   background-color: var(--primary-color);
 }
 .container .text-area {
@@ -148,10 +151,11 @@ body.dark {
   background-color: transparent;
   resize: none;
   outline: none;
-  border: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
   color: var(--text-color);
   font-size: 18px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 .container .text-area .chars {
   position: absolute;
@@ -161,9 +165,6 @@ body.dark {
   font-size: 0.8rem;
   color: var(--light-text-color);
 }
-.container .center {
-  position: relative;
-}
 .swap-position {
   display: flex;
   align-items: center;
@@ -172,20 +173,20 @@ body.dark {
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   cursor: pointer;
-  border: 5px solid var(--bg-color);
+  border: 4px solid var(--bg-color);
   transition: all 0.3s ease;
   color: var(--primary-text-color);
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
 .swap-position ion-icon {
-  font-size: 25px;
+  font-size: 30px;
 }
 .swap-position:hover {
-  transform: translateX(-50%) scale(1.1);
+  transform: translateX(-50%) scale(1.2);
 }
 .card-bottom {
   display: flex;
@@ -195,47 +196,23 @@ body.dark {
   padding-top: 20px;
   border-top: 2px solid var(--bg-color);
 }
-.card-bottom p {
-  margin-bottom: 20px;
-}
-.card-bottom label {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 0 20px;
-  cursor: pointer;
-  border-radius: 30px;
-  background-color: var(--bg-color);
-}
-.card-bottom label:hover {
-  color: var(--primary-text-color);
-  background-color: var(--primary-color);
-}
-.card-bottom span {
-  font-size: 12px;
-  pointer-events: none;
-}
-.card-bottom ion-icon {
-  font-size: 20px;
-}
-
+.card-bottom label,
 .card-bottom button {
   height: 50px;
   display: flex;
   align-items: center;
   gap: 20px;
   padding: 0 20px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  color: var(--text-color);
   cursor: pointer;
+  border-radius: 30px;
   background-color: var(--bg-color);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
 }
+.card-bottom label:hover,
 .card-bottom button:hover {
-  color: var(--primary-text-color);
   background-color: var(--primary-color);
+  color: var(--primary-text-color);
 }
 
 .mode {
@@ -280,38 +257,4 @@ body.dark {
 .toggle img {
   width: 20px;
   height: 20px;
-}
-
-/* media quiries */
-@media (max-width: 800px) {
-  .container {
-    width: 100%;
-    margin-top: 20px;
-    flex-direction: column;
-  }
-  .container .card {
-    width: 100%;
-  }
-  .container .card .from {
-    margin-right: 0;
-  }
-  .container .card .to {
-    margin-left: 0;
-  }
-  .container .card .from,
-  .container .card .to {
-    flex-direction: column;
-  }
-
-  .swap-position {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .swap-position:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
-  .swap-position ion-icon {
-    transform: rotate(90deg);
-  }
 }
