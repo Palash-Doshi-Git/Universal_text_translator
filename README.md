@@ -10,13 +10,12 @@ Universal Text Translator is an advanced application that leverages cloud servic
 - **Demo Video URL:** [Link to the Demo Video]
 - **GitHub Repository URL:** [https://github.com/Palash-Doshi-Git/Universal_text_translator.git](https://github.com/Palash-Doshi-Git/Universal_text_translator.git)
 - **Industry:** Technology / Translation
-- **Sample Credentials:** `sampleemail@example.com` & `password123`
 
 ### Cloud Services Used
 
 #### Core Cloud Services
 
-1. **Azure App Service:**  
+1. **Azure App Service - Static Web App:**  
    Hosts the web application, providing a scalable and reliable environment for user interaction and translation processing.
 
 2. **Azure Blob Storage:**  
@@ -64,13 +63,15 @@ Offers advanced translation capabilities, supporting multiple languages and prov
 
 ### Screenshots
 
-#### Azure App Service
+#### Azure App Service - Static Web App
 **Description:** Hosting environment for the web application.  
-![Azure App Service](https://your-blob-storage-url/path-to-app-service-screenshot)
+![image](https://github.com/user-attachments/assets/50489499-6f58-4d49-a4dd-e7bcfc92b7b3)
+
 
 #### Azure Blob Storage
 **Description:** Document storage for translation.  
-![Azure Blob Storage](https://your-blob-storage-url/path-to-blob-storage-screenshot)
+![image](https://github.com/user-attachments/assets/10b604fa-976e-4ce5-96ac-76b9631f5947)
+
 
 #### Google Translator API
 **Description:** Text and document translation capabilities.  
